@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <form class="form" (submit)="sendValue()">
+    <div class="title">Some form</div>
+    <input type="text" placeholder="Type there your text" [(ngModel)]="value" [ngModelOptions]="{ standalone: true }">
+    <input type="submit" class="accept" value="Send value"/>
+    <input type="button" (click)="removeValue()" class="reset" value="Remove value"/>
+  </form>
+  <div *ngIf="hasValue$ | async" class="value">{{ serverValue$ | async }}</div>
+</div>

@@ -1,0 +1,109 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        width: 30%;
+        background-color: rgba(240,240,240,1);
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        margin-bottom: 20px;
+        cursor: default;
+        box-sizing: border-box;
+        
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: rgba(50,50,50,1)
+        }
+        
+        input {
+
+            &[type='text'] {
+                text-align: center;
+                width: 100%;
+                height: 36px;
+                margin-bottom: 15px;
+                padding: 10px;
+                box-sizing: border-box;
+                font-size: 18px;
+                border-radius: 10px;
+                border: 1px solid transparent;
+                outline: none;
+                cursor: text;
+
+                &:focus {
+                    border: 2px solid rgba(8,146,250,1);
+                }
+            }
+
+            &[type='submit'], &[type='button'] {
+                text-align: center;
+                width: 100%;
+                height: 36px;
+                margin-bottom: 10px;
+                font-size: 18px;
+                border-radius: 10px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                transition: .2s ease-in-out all;
+                outline: none;
+
+                &.accept {
+                    background-color: rgba(2, 192, 2, 1);
+                    color: rgba(255,255,255,1);
+                    border: 1px solid rgba(2, 192, 2, 1);
+
+                    &:hover {
+                        color: rgba(2, 192, 2, 1);
+                        background-color: rgba(255,255,255,1);
+                    }
+                }
+
+                &.reset {
+                    background-color: rgba(192,2,2,1);
+                    color: rgba(255,255,255,1);
+                    border: 1px solid rgba(192,2,2,1);
+
+                    &:hover {
+                        color: rgba(192,2,2,1);
+                        background-color: rgba(255,255,255,1);
+                    }
+                }
+
+                &:active {
+                    transform: translateY(3px);
+                }
+                &:focus {
+                    border: 2px solid rgba(8,146,250,1);
+                }
+            }
+        }
+    }
+
+    .value {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        width: 30%;
+        background-color: rgba(240,240,240,1);
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        cursor: default;
+        box-sizing: border-box;
+        overflow: hidden;
+        word-break: break-all;
+    }
+}

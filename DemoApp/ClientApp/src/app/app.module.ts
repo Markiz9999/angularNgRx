@@ -1,0 +1,30 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { StoreModule } from '@ngrx/store';
+import { AllReducers } from './store/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { DemoEffects } from './services/effects/demo.effects';
+import { DemoValueService } from '@http';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    StoreModule.forRoot(AllReducers),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forRoot([DemoEffects]),
+    HttpClientModule,
+  ],
+  providers: [DemoValueService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
