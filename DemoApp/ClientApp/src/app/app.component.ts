@@ -28,9 +28,7 @@ export class AppComponent {
   }
 
   sendValue() {
-    if (this.value.trim() !== '') {
-      this.store.dispatch(new DemoValueRequest(this.value));
-    }
+    this.store.dispatch(new DemoValueRequest(this.value));
     return false;
   }
 
